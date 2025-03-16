@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=1521, maximum-scale=1.0"><link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png"><meta name="og:type" content="website"><meta name="twitter:card" content="photo"><script id="anima-load-script" src="load.js"></script><script id="anima-hotspots-script" src="hotspots.js"></script><script id="anima-overrides-script" src="overrides.js"></script><script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script><style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@import url("https://fonts.googleapis.com/css?family=Abel:400|Poppins:400,600|Inter:400,600");
+
+@import url("https://px.animaapp.com/67cd2af9d88328bf7919b111.67cd2afad88328bf7919b114.paXmXa0.hch.png");
+
+
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.component-wrapper a {
+  display: contents;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+.component-wrapper * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+  pointer-events: auto;
+}
+
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+  visibility: hidden !important;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.full-width-a {
+  width: 100%;
+}
+
+.full-height-a {
+  height: 100%;
+}
+
+.container-center-vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  pointer-events: none;
+}
+
+.container-center-vertical > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.auto-animated div {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated input {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+
+.overlay-base {
+  display: none;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.overlay-base.animate-appear {
+  align-items: center;
+  animation: reveal 0.3s ease-in-out 1 normal forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+}
+
+.overlay-base.animate-disappear {
+  animation: reveal 0.3s ease-in-out 1 reverse forwards;
+  display: block;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.overlay-base.animate-disappear * {
+  pointer-events: none;
+}
+
+@keyframes reveal {
+  from { opacity: 0 }
+ to { opacity: 1 }
+}
+
+.animate-nodelay {
+  animation-delay: 0s;
+}
+
+.align-self-flex-start {
+  align-self: flex-start;
+}
+
+.align-self-flex-end {
+  align-self: flex-end;
+}
+
+.align-self-flex-center {
+  align-self: flex-center;
+}
+
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.valign-text-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+input:focus {
+  outline: none;
+}
+
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+:root { 
+  --black: #000000;
+  --chicago: #5c5c5c;
+  --granite-gray: #666666;
+  --mountain-mist: #999999;
+  --my-sin: #fbae24;
+  --pomegranate: #eb4227;
+  --white: #ffffff;
+ 
+  --font-size-l: 18px;
+  --font-size-m: 14px;
+  --font-size-s: 13px;
+  --font-size-xl: 20px;
+  --font-size-xs: 11px;
+  --font-size-xxl: 24px;
+  --font-size-xxxl: 30px;
+ 
+  --font-family-abel: "Abel", Helvetica;
+  --font-family-font_awesome_5_pro-solid: "Font Awesome 5 Pro-Solid", Helvetica;
+  --font-family-inter: "Inter", Helvetica;
+  --font-family-poppins: "Poppins", Helvetica;
+}
+.fontawesome5pro-solid-normal-my-sin-11px {
+  color: var(--my-sin);
+  font-family: var(--font-family-font_awesome_5_pro-solid);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.poppins-normal-white-20px {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.poppins-normal-white-24px {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-black-14px {
+  color: var(--black);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-semi-bold-pomegranate-18px {
+  color: var(--pomegranate);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-semi-bold-granite-gray-13px {
+  color: var(--granite-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-semi-bold-white-11px {
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.fontawesome5pro-solid-normal-mountain-mist-14px {
+  color: var(--mountain-mist);
+  font-family: var(--font-family-font_awesome_5_pro-solid);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.poppins-semi-bold-white-20px {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.poppins-normal-white-18px {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* screen - desktop-3 */
+
+.desktop-3 {
+  background-color: var(--white);
+  height: 5323px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1521px;
+}
+
+.desktop-3 .rectangle-4-cusbr8 {
+  background-color: #d0d0d0;
+  height: 872px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1392px;
+}
+
+.desktop-3 .image-cusbr8 {
+  background-color: transparent;
+  height: 1014px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 1319px;
+  width: 1521px;
+}
+
+.desktop-3 .mask-group-cusbr8 {
+  height: 1014px;
+  left: -1px;
+  top: 0px;
+}
+
+.desktop-3 .young-male-player-pl-xRP9fN {
+  background-color: transparent;
+  height: 1014px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1520px;
+}
+
+.desktop-3 .rectangle-1-cusbr8 {
+  background-color: var(--chicago);
+  height: 176px;
+  left: 0px;
+  position: absolute;
+  top: -2px;
+  width: 1521px;
+}
+
+.desktop-3 .rectangle-8-cusbr8 {
+  background-color: var(--chicago);
+  height: 176px;
+  left: 0px;
+  position: absolute;
+  top: 2278px;
+  width: 1521px;
+}
+
+.desktop-3 .mask-group-yo9xbe {
+  height: 1073px;
+  left: 0px;
+  top: 2450px;
+}
+
+.desktop-3 .rectangle-9-cusbr8 {
+  background-color: var(--chicago);
+  height: 111px;
+  left: 0px;
+  position: absolute;
+  top: 3418px;
+  width: 1521px;
+}
+
+.desktop-3 .rectangle-6-cusbr8 {
+  background-color: #828282;
+  height: 52px;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: 1521px;
+}
+
+.desktop-3 .logo-beater-01-1-cusbr8 {
+  background-color: transparent;
+  height: 115px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 59px;
+  width: 92px;
+}
+
+.desktop-3 .logo-beater-01-2-cusbr8 {
+  background-color: transparent;
+  height: 775px;
+  left: 12px;
+  object-fit: cover;
+  position: absolute;
+  top: 50px;
+  width: 620px;
+}
+
+.desktop-3 .beater-basketball-cusbr8 {
+  color: var(--white);
+  font-size: 48px;
+  left: 97px;
+  top: 85px;
+  width: auto;
+}
+
+.desktop-3 .help-cusbr8 {
+  left: 1252px;
+  top: 14px;
+}
+
+.desktop-3 .join-us-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 1317px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 14px;
+  width: auto;
+}
+
+.desktop-3 .sign-in-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 1404px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 14px;
+  width: auto;
+}
+
+.desktop-3 .group-1-cusbr8 {
+  background-color: transparent;
+  height: 36px;
+  left: 514px;
+  position: absolute;
+  top: 100px;
+  width: 521px;
+}
+
+.desktop-3 .contact-iKb0y9 {
+  background-color: transparent;
+  height: auto;
+  left: 415px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.desktop-3 .product-iKb0y9 {
+  left: 282px;
+  letter-spacing: 0.00px;
+  top: 0px;
+}
+
+.desktop-3 .content-iKb0y9 {
+  background-color: transparent;
+  height: auto;
+  left: 146px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.desktop-3 .about-us-iKb0y9 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.desktop-3 .rectangle-5-cusbr8 {
+  background-color: #d9d9d9;
+  border-radius: 40px;
+  height: 49px;
+  left: 1244px;
+  position: absolute;
+  top: 93px;
+  width: 239px;
+}
+
+.desktop-3 .shop-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 812px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 1242px;
+  width: auto;
+}
+
+.desktop-3 .symbol-cusbr8 {
+  height: 26px;
+  left: 1214px;
+  top: 105px;
+  width: 26px;
+}
+
+.desktop-3 .search-cusbr8 {
+  background-color: transparent;
+  color: #00000080;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 1266px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 103px;
+  width: auto;
+}
+
+.desktop-3 .line-2-cusbr8 {
+  background-color: transparent;
+  height: 23px;
+  left: 1392px;
+  object-fit: cover;
+  position: absolute;
+  top: 19px;
+  width: 1px;
+}
+
+.desktop-3 .line-3-cusbr8 {
+  background-color: transparent;
+  height: 23px;
+  left: 1305px;
+  object-fit: cover;
+  position: absolute;
+  top: 19px;
+  width: 1px;
+}
+
+.desktop-3 .beater-basketball-yo9xbe {
+  color: var(--black);
+  font-size: 128px;
+  left: 247px;
+  top: 1086px;
+  white-space: nowrap;
+  width: 1028px;
+}
+
+.desktop-3 .title-cusbr8 {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-abel);
+  font-size: 200px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 250px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 3522px;
+  width: auto;
+}
+
+.desktop-3 .est-2025-cusbr8 {
+  background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 643px;
+  letter-spacing: 15.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 1245px;
+  width: auto;
+}
+
+.desktop-3 .beat-your-enemy-cusbr8 {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 400;
+  left: 525px;
+  letter-spacing: 15.00px;
+  top: 1041px;
+}
+
+.desktop-3 .product-cusbr8 {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  left: 661px;
+  letter-spacing: 13.00px;
+  top: 2343px;
+}
+
+.desktop-3 .our-content-cusbr8 {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 598px;
+  letter-spacing: 13.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 3454px;
+  width: auto;
+}
+
+.desktop-3 .pngwingcom-7-1-cusbr8 {
+  background-color: transparent;
+  height: 332px;
+  left: 972px;
+  object-fit: cover;
+  position: absolute;
+  top: 3859px;
+  width: 332px;
+}
+
+.desktop-3 .symbol-yo9xbe {
+  height: 15px;
+  left: 1541px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  text-align: center;
+  top: 4211px;
+  white-space: nowrap;
+  width: 15px;
+}
+
+.desktop-3 .group-1-6-cusbr8 {
+  height: 68px;
+  left: 123px;
+  top: 3840px;
+  width: 49px;
+}
+
+.desktop-3 .link-choco-baby-bouncer-balloon-lGFdxs {
+  background-color: transparent;
+  height: 42px;
+  left: -73px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: center;
+  top: -1px;
+  width: 195px;
+}
+
+.desktop-3 .symbol-lGFdxs {
+  height: 11px;
+  left: -23px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.desktop-3 .symbol-HKtHZU {
+  height: 11px;
+  left: -7px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.desktop-3 .symbol-UAkocS {
+  height: 11px;
+  left: 8px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.desktop-3 .symbol-lzffUT {
+  height: 11px;
+  left: 24px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.desktop-3 .symbol-lfrK3d {
+  height: 11px;
+  left: 39px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.desktop-3 .small-2-lGFdxs {
+  background-color: transparent;
+  color: var(--mountain-mist);
+  font-family: var(--font-family-inter);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  height: 12px;
+  left: 57px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 16px;
+}
+
+.desktop-3 .group-1-6-12900-cusbr8 {
+  left: 34px;
+  width: 105px;
+}
+
+.desktop-3 .group-1-6-12900-yo9xbe {
+  left: 280px;
+  width: 122px;
+}
+
+.desktop-3 .group-1-6-12900-rQk8bn {
+  left: 529px;
+  width: 122px;
+}
+
+.desktop-3 .group-1-6-12900-RppJxX {
+  left: 779px;
+  width: 122px;
+}
+
+.desktop-3 .group-1-6-12900-wEc1fp {
+  left: 1027px;
+  width: 122px;
+}
+
+.desktop-3 .group-1-6-12900-ENV5Ug {
+  left: 1272px;
+  width: 122px;
+}
+
+.desktop-3 .group-1-6-small-15900-cusbr8 {
+  left: 34px;
+}
+
+.desktop-3 .group-1-6-small-15900-yo9xbe {
+  left: 283px;
+}
+
+.desktop-3 .group-1-6-small-15900-rQk8bn {
+  left: 528px;
+}
+
+.desktop-3 .group-1-6-small-15900-RppJxX {
+  left: 779px;
+}
+
+.desktop-3 .group-1-6-small-15900-wEc1fp {
+  left: 1030px;
+}
+
+.desktop-3 .group-1-6-small-15900-ENV5Ug {
+  left: 1279px;
+}
+
+.desktop-3 .group-1-6-small-cusbr8 {
+  left: 184px;
+  top: 4190px;
+}
+
+.desktop-3 .group-1-6-small-yo9xbe {
+  left: 430px;
+  top: 4187px;
+}
+
+.desktop-3 .x48-off-135qet {
+  background-color: transparent;
+  height: 11px;
+  left: 6px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.desktop-3 .group-1-6-small-rQk8bn {
+  left: 677px;
+  top: 4187px;
+}
+
+.desktop-3 .x14-off-2UScP7 {
+  background-color: transparent;
+  height: 11px;
+  left: 6px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.desktop-3 .group-1-6-small-RppJxX {
+  left: 927px;
+  top: 4187px;
+}
+
+.desktop-3 .x28-off-NLfxxO {
+  background-color: transparent;
+  height: 11px;
+  left: 6px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.desktop-3 .group-1-6-small-wEc1fp {
+  left: 1173px;
+  top: 4187px;
+}
+
+.desktop-3 .group-1-6-small-ENV5Ug {
+  left: 1421px;
+  top: 4187px;
+}
+
+.desktop-3 .x30-off-xDYx5D {
+  background-color: transparent;
+  height: 11px;
+  left: 6px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  white-space: nowrap;
+  width: 52px;
+}
+
+.desktop-3 .symbol-rQk8bn {
+  height: 15px;
+  left: 221px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  text-align: center;
+  top: 4225px;
+  white-space: nowrap;
+  width: 15px;
+}
+
+.desktop-3 .group-1-6-stroke-cusbr8 {
+  background-color: transparent;
+  height: 463px;
+  left: 24px;
+  position: absolute;
+  top: 3808px;
+  width: 229px;
+}
+
+.desktop-3 .group-2-6-cusbr8 {
+  background-color: transparent;
+  height: 68px;
+  left: 368px;
+  position: absolute;
+  top: 3840px;
+  width: 50px;
+}
+
+.desktop-3 .link-genber-lil-crunchies-ounce-Bjl3Uc {
+  background-color: transparent;
+  height: 42px;
+  left: -72px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: center;
+  top: -1px;
+  width: 193px;
+}
+
+.desktop-3 .symbol-Bjl3Uc {
+  height: 11px;
+  left: -22px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.desktop-3 .symbol-Br2543 {
+  height: 11px;
+  left: -7px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.desktop-3 .symbol-GUUC0y {
+  height: 11px;
+  left: 9px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.desktop-3 .symbol-bC9Ubq {
+  height: 11px;
+  left: 24px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.desktop-3 .symbol-KxGqfB {
+  color: var(--mountain-mist);
+  font-family: var(--font-family-font_awesome_5_pro-solid);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+  height: 11px;
+  left: 39px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 13px;
+}
+
+.desktop-3 .small-7-Bjl3Uc {
+  background-color: transparent;
+  color: var(--mountain-mist);
+  font-family: var(--font-family-inter);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  height: 12px;
+  left: 57px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  top: 51px;
+  white-space: nowrap;
+  width: 16px;
+}
+
+.desktop-3 .symbol-RppJxX {
+  color: var(--pomegranate);
+  font-family: var(--font-family-font_awesome_5_pro-solid);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+  height: 15px;
+  left: 472px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  text-align: center;
+  top: 4225px;
+  white-space: nowrap;
+  width: 15px;
+}
+
+.desktop-3 .group-2-6-stroke-cusbr8 {
+  background-color: transparent;
+  height: 463px;
+  left: 273px;
+  position: absolute;
+  top: 3808px;
+  width: 229px;
+}
+
+.desktop-3 .group-3-6-link-gancho-slim-snacker-high-cusbr8 {
+  background-color: transparent;
+  height: 44px;
+  left: 548px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: center;
+  top: 3839px;
+  width: 187px;
+}
+
+.desktop-3 .symbol-wEc1fp {
+  color: var(--pomegranate);
+  font-family: var(--font-family-font_awesome_5_pro-solid);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+  height: 15px;
+  left: 718px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  text-align: center;
+  top: 4225px;
+  white-space: nowrap;
+  width: 15px;
+}
+
+.desktop-3 .group-3-6-stroke-cusbr8 {
+  background-color: transparent;
+  height: 463px;
+  left: 521px;
+  position: absolute;
+  top: 3808px;
+  width: 230px;
+}
+
+.desktop-3 .group-4-6-link-emno-breeze-baby-carrier-cusbr8 {
+  background-color: transparent;
+  height: 22px;
+  left: 796px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: center;
+  top: 3850px;
+  white-space: nowrap;
+  width: 181px;
+}
+
+.desktop-3 .symbol-ENV5Ug {
+  height: 15px;
+  left: 966px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  text-align: center;
+  top: 4225px;
+  white-space: nowrap;
+  width: 15px;
+}
+
+.desktop-3 .group-4-6-stroke-cusbr8 {
+  background-color: transparent;
+  height: 463px;
+  left: 770px;
+  position: absolute;
+  top: 3808px;
+  width: 230px;
+}
+
+.desktop-3 .group-5-6-link-shorp-49-class-fhd-1080-cusbr8 {
+  background-color: transparent;
+  height: 22px;
+  left: 1032px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: center;
+  top: 3839px;
+  white-space: nowrap;
+  width: 187px;
+}
+
+.desktop-3 .group-5-6-link-shorp-49-class-fhd-1081-cusbr8 {
+  background-color: transparent;
+  height: 22px;
+  left: 1278px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: center;
+  top: 3834px;
+  white-space: nowrap;
+  width: 188px;
+}
+
+.desktop-3 .symbol-0dWnEx {
+  height: 15px;
+  left: 1213px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  text-align: center;
+  top: 4225px;
+  white-space: nowrap;
+  width: 15px;
+}
+
+.desktop-3 .symbol-TdlIxk {
+  height: 15px;
+  left: 1463px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  text-align: center;
+  top: 4225px;
+  white-space: nowrap;
+  width: 15px;
+}
+
+.desktop-3 .group-5-6-stroke-cusbr8 {
+  background-color: transparent;
+  height: 463px;
+  left: 1019px;
+  position: absolute;
+  top: 3808px;
+  width: 229px;
+}
+
+.desktop-3 .group-5-8-stroke-cusbr8 {
+  background-color: transparent;
+  height: 463px;
+  left: 1267px;
+  position: absolute;
+  top: 3808px;
+  width: 229px;
+}
+
+.desktop-3 .pngwingcom-6-1-cusbr8 {
+  background-color: transparent;
+  height: 154px;
+  left: 250px;
+  object-fit: cover;
+  position: absolute;
+  top: 3950px;
+  width: 257px;
+}
+
+.desktop-3 .pngwingcom-4-1-cusbr8 {
+  background-color: transparent;
+  height: 257px;
+  left: 509px;
+  object-fit: cover;
+  position: absolute;
+  top: 3892px;
+  width: 257px;
+}
+
+.desktop-3 .pngwingcom-5-1-cusbr8 {
+  background-color: transparent;
+  height: 166px;
+  left: 761px;
+  object-fit: cover;
+  position: absolute;
+  top: 3938px;
+  width: 249px;
+}
+
+.desktop-3 .pngwingcom-8-1-cusbr8 {
+  background-color: transparent;
+  height: 267px;
+  left: 1261px;
+  object-fit: cover;
+  position: absolute;
+  top: 3878px;
+  width: 249px;
+}
+
+.desktop-3 .rectangle-10-cusbr8 {
+  background-color: var(--chicago);
+  height: 855px;
+  left: 0px;
+  position: absolute;
+  top: 4468px;
+  width: 1521px;
+}
+
+.desktop-3 .logo-beater-01-3-cusbr8 {
+  background-color: transparent;
+  height: 234px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 4536px;
+  width: 187px;
+}
+
+.desktop-3 .group-6-cusbr8 {
+  background-color: transparent;
+  height: 59px;
+  left: 180px;
+  position: absolute;
+  top: 4665px;
+  width: 370px;
+}
+
+.desktop-3 .group-7-cusbr8 {
+  background-color: transparent;
+  height: 57px;
+  left: 187px;
+  position: absolute;
+  top: 4593px;
+  width: 214px;
+}
+
+.desktop-3 .connect-with-us-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 692px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4566px;
+  width: auto;
+}
+
+.desktop-3 .help-yo9xbe {
+  left: 914px;
+  top: 4566px;
+}
+
+.desktop-3 .hub-admin-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 1181px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4566px;
+  width: auto;
+}
+
+.desktop-3 .x62-821-365-7432-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 1181px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4634px;
+  width: auto;
+}
+
+.desktop-3 .instagram-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 692px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4634px;
+  width: auto;
+}
+
+.desktop-3 .blog-news-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 914px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4634px;
+  width: auto;
+}
+
+.desktop-3 .tik-tok-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 692px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4702px;
+  width: auto;
+}
+
+.desktop-3 .how-to-buy-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 914px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4702px;
+  width: auto;
+}
+
+.desktop-3 .testimonial-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 914px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4769px;
+  width: auto;
+}
+
+.desktop-3 .check-order-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 914px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4836px;
+  width: auto;
+}
+
+.desktop-3 .track-order-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 914px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4903px;
+  width: auto;
+}
+
+.desktop-3 .term-and-conditions-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 914px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4970px;
+  width: auto;
+}
+
+.desktop-3 .payment-confirmation-cusbr8 {
+  background-color: transparent;
+  height: auto;
+  left: 914px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 5037px;
+  width: auto;
+}
+
+.desktop-3 .rectangle-11-cusbr8 {
+  background-color: var(--chicago);
+  border-radius: 40px;
+  height: 77px;
+  left: 601px;
+  position: absolute;
+  top: 4338px;
+  width: 305px;
+}
+
+.desktop-3 .for-more-product-cusbr8 {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 632px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 4355px;
+  width: auto;
+}
+
+.desktop-3 .rectangle-12-cusbr8 {
+  background-color: #828282;
+  height: 110px;
+  left: 0px;
+  position: absolute;
+  top: 5213px;
+  width: 1521px;
+}
+
+.desktop-3 .group-8-cusbr8 {
+  background-color: transparent;
+  height: 36px;
+  left: 338px;
+  position: absolute;
+  top: 5250px;
+  width: 851px;
+}
+
+.desktop-3 .beat-your-enemy-IVz8fj {
+  left: 359px;
+  letter-spacing: 0.00px;
+  top: 0px;
+}
+
+.desktop-3 .basketball-tutorial-IVz8fj {
+  background-color: transparent;
+  height: auto;
+  left: 594px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.desktop-3 .original-basketball-shoes-IVz8fj {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.desktop-3 .line-4-IVz8fj {
+  background-color: transparent;
+  height: 23px;
+  left: 428px;
+  object-fit: cover;
+  position: absolute;
+  top: 6px;
+  width: 1px;
+}
+
+.desktop-3 .line-5-IVz8fj {
+  background-color: transparent;
+  height: 23px;
+  left: 663px;
+  object-fit: cover;
+  position: absolute;
+  top: 6px;
+  width: 1px;
+}
+
+.desktop-3 .group-1-6-yo9xbe {
+  height: 250px;
+  left: 22px;
+  overflow: hidden;
+  top: 3902px;
+  width: 226px;
+}
+
+.desktop-3 .group-3-3-prod1_3jpg-H1OnTh {
+  background-color: transparent;
+  background-image: url(https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/group---3---3---prod1-3-jpg@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 198px;
+  left: 1px;
+  overflow: hidden;
+  position: relative;
+  top: 11px;
+  transform: rotate(180deg);
+  width: 224px;
+}
+
+.desktop-3 .image-2-V70l4c {
+  background-color: transparent;
+  height: 198px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  transform: rotate(-180deg);
+  width: 221px;
+}
+
+.desktop-3 .beat-your-enemy {
+  background-color: transparent;
+  height: auto;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  width: auto;
+}
+
+.desktop-3 .beater-basketball {
+  background-color: transparent;
+  font-family: var(--font-family-abel);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+}
+
+.desktop-3 .group-1-6 {
+  background-color: transparent;
+  position: absolute;
+}
+
+.desktop-3 .group-1-6-12900 {
+  background-color: transparent;
+  height: 28px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: center;
+  top: 4183px;
+  white-space: nowrap;
+}
+
+.desktop-3 .group-1-6-small {
+  background-color: var(--pomegranate);
+  border-radius: 8px;
+  height: 22px;
+  position: absolute;
+  width: 64px;
+}
+
+.desktop-3 .group-1-6-small-15900 {
+  background-color: transparent;
+  height: 20px;
+  letter-spacing: 0.00px;
+  line-height: 19.5px;
+  position: absolute;
+  text-align: center;
+  text-decoration: line-through;
+  top: 4166px;
+  white-space: nowrap;
+  width: 90px;
+}
+
+.desktop-3 .help {
+  background-color: transparent;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  width: auto;
+}
+
+.desktop-3 .mask-group {
+  background-color: transparent;
+  position: absolute;
+  width: 1521px;
+}
+
+.desktop-3 .product {
+  background-color: transparent;
+  height: auto;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  width: auto;
+}
+
+.desktop-3 .symbol {
+  background-color: transparent;
+  position: absolute;
+}
+
+.desktop-3 .x50-off {
+  background-color: transparent;
+  height: 11px;
+  left: 6px;
+  letter-spacing: 0.00px;
+  line-height: 11px;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  white-space: nowrap;
+  width: 52px;
+}
+</style></head><body style="margin: 0;background: #ffffff;"><input type="hidden" id="anPageName" name="page" value="desktop-3"><div class="container-center-horizontal"><div class="desktop-3 screen " data-id="65:71"><div class="rectangle-4-cusbr8" data-id="65:72"></div><img class="image-cusbr8" data-id="66:160" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6d48592ff18ccb38bb1e4/img/image.png" alt="image"><div class="mask-group-cusbr8 mask-group" data-id="65:84"><img class="young-male-player-pl-xRP9fN" data-id="65:86" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/young-male-player-playing-with-basketball-player-1.png" alt="young-male-player-playing-with-basketball-player 1"></div><div class="rectangle-1-cusbr8" data-id="65:87"></div><div class="rectangle-8-cusbr8" data-id="66:165"></div><img class="mask-group-yo9xbe mask-group" data-id="66:164" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/mask-group.png" alt="Mask group"><div class="rectangle-9-cusbr8" data-id="66:166"></div><div class="rectangle-6-cusbr8" data-id="66:117"></div><img class="logo-beater-01-1-cusbr8" data-id="65:89" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67cd4b6670213266b1bcf2e9/img/logo-beater-01-1.png" alt="logo beater-01 1"><img class="logo-beater-01-2-cusbr8" data-id="66:142" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/logo-beater-01-2.png" alt="logo beater-01 2"><div class="beater-basketball-cusbr8 beater-basketball" data-id="65:90">BEATER BASKETBALL</div><div class="help-cusbr8 help poppins-normal-white-18px" data-id="66:134">Help</div><div class="join-us-cusbr8 poppins-normal-white-18px" data-id="66:135">Join us</div><div class="sign-in-cusbr8 poppins-normal-white-18px" data-id="66:136">Sign in</div><div class="group-1-cusbr8" data-id="66:141"><div class="contact-iKb0y9 poppins-normal-white-24px" data-id="65:92">Contact</div><div class="product-iKb0y9 product poppins-normal-white-24px" data-id="65:94">Product</div><div class="content-iKb0y9 poppins-normal-white-24px" data-id="65:95">Content</div><div class="about-us-iKb0y9 poppins-normal-white-24px" data-id="65:96">About us</div></div><div class="rectangle-5-cusbr8" data-id="66:111"></div><div class="shop-cusbr8 poppins-normal-white-24px" data-id="66:151">Shop</div><img class="symbol-cusbr8 symbol" data-id="66:115" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6d48592ff18ccb38bb1e4/img/symbol.svg" alt="Symbol"><div class="search-cusbr8" data-id="66:133">Search...</div><img class="line-2-cusbr8" data-id="66:138" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6d48592ff18ccb38bb1e4/img/line-2.svg" alt="Line 2"><img class="line-3-cusbr8" data-id="66:139" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6d48592ff18ccb38bb1e4/img/line-2.svg" alt="Line 3"><div class="beater-basketball-yo9xbe beater-basketball" data-id="65:78">BEATER BASKETBALL</div><h1 class="title-cusbr8" data-id="72:174">OUR PRODUCT</h1><div class="est-2025-cusbr8" data-id="66:145">EST 2025</div><div class="beat-your-enemy-cusbr8 beat-your-enemy" data-id="66:147">BEAT YOUR ENEMY</div><div class="product-cusbr8 product" data-id="66:172">PRODUCT</div><div class="our-content-cusbr8" data-id="66:173">OUR CONTENT</div><img class="pngwingcom-7-1-cusbr8" data-id="81:483" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6d48592ff18ccb38bb1e4/img/pngwing-com--7--1.png" alt="pngwing.com (7) 1"><div class="symbol-yo9xbe valign-text-middle symbol fontawesome5pro-solid-normal-mountain-mist-14px" data-id="76:454"></div><div class="group-1-6-cusbr8 group-1-6" data-id="76:177"><p class="link-choco-baby-bouncer-balloon-lGFdxs valign-text-middle inter-semi-bold-black-14px" data-id="76:178">Wilson Basketball,<br>NBA ball size 7</p><div class="symbol-lGFdxs valign-text-middle symbol fontawesome5pro-solid-normal-my-sin-11px" data-id="76:179"></div><div class="symbol-HKtHZU valign-text-middle symbol fontawesome5pro-solid-normal-my-sin-11px" data-id="76:180"></div><div class="symbol-UAkocS valign-text-middle symbol fontawesome5pro-solid-normal-my-sin-11px" data-id="76:181"></div><div class="symbol-lzffUT valign-text-middle symbol fontawesome5pro-solid-normal-my-sin-11px" data-id="76:182"></div><div class="symbol-lfrK3d valign-text-middle symbol fontawesome5pro-solid-normal-my-sin-11px" data-id="76:183"></div><div class="small-2-lGFdxs valign-text-middle" data-id="76:184">(2)</div></div><div class="group-1-6-12900-cusbr8 valign-text-middle group-1-6-12900 inter-semi-bold-pomegranate-18px" data-id="76:185">Rp 600.000</div><div class="group-1-6-12900-yo9xbe valign-text-middle group-1-6-12900 inter-semi-bold-pomegranate-18px" data-id="76:469">Rp 3.400.000</div><div class="group-1-6-12900-rQk8bn valign-text-middle group-1-6-12900 inter-semi-bold-pomegranate-18px" data-id="76:473">Rp 2.400.000</div><div class="group-1-6-12900-RppJxX valign-text-middle group-1-6-12900 inter-semi-bold-pomegranate-18px" data-id="76:479">Rp 4.400.000</div><div class="group-1-6-12900-wEc1fp valign-text-middle group-1-6-12900 inter-semi-bold-pomegranate-18px" data-id="81:484">Rp 1.000.000</div><div class="group-1-6-12900-ENV5Ug valign-text-middle group-1-6-12900 inter-semi-bold-pomegranate-18px" data-id="81:489">Rp 800.000</div><div class="group-1-6-small-15900-cusbr8 valign-text-middle group-1-6-small-15900 inter-semi-bold-granite-gray-13px" data-id="76:186">Rp 1.200.000</div><div class="group-1-6-small-15900-yo9xbe valign-text-middle group-1-6-small-15900 inter-semi-bold-granite-gray-13px" data-id="76:470">Rp 6.200.000</div><div class="group-1-6-small-15900-rQk8bn valign-text-middle group-1-6-small-15900 inter-semi-bold-granite-gray-13px" data-id="76:474">Rp 3.200.000</div><div class="group-1-6-small-15900-RppJxX valign-text-middle group-1-6-small-15900 inter-semi-bold-granite-gray-13px" data-id="76:480">Rp 5.600.000</div><div class="group-1-6-small-15900-wEc1fp valign-text-middle group-1-6-small-15900 inter-semi-bold-granite-gray-13px" data-id="81:485">Rp 2.000.000</div><div class="group-1-6-small-15900-ENV5Ug valign-text-middle group-1-6-small-15900 inter-semi-bold-granite-gray-13px" data-id="81:490">Rp 1.200.000</div><div class="group-1-6-small-cusbr8 group-1-6-small" data-id="76:187"><div class="x50-off valign-text-middle inter-semi-bold-white-11px" data-id="76:188">50% OFF</div></div><div class="group-1-6-small-yo9xbe group-1-6-small" data-id="76:471"><div class="x48-off-135qet valign-text-middle inter-semi-bold-white-11px" data-id="76:472">48% OFF</div></div><div class="group-1-6-small-rQk8bn group-1-6-small" data-id="76:475"><div class="x14-off-2UScP7 valign-text-middle inter-semi-bold-white-11px" data-id="76:476">14% OFF</div></div><div class="group-1-6-small-RppJxX group-1-6-small" data-id="76:481"><div class="x28-off-NLfxxO valign-text-middle inter-semi-bold-white-11px" data-id="76:482">28% OFF</div></div><div class="group-1-6-small-wEc1fp group-1-6-small" data-id="81:486"><div class="x50-off valign-text-middle inter-semi-bold-white-11px" data-id="81:487">50% OFF</div></div><div class="group-1-6-small-ENV5Ug group-1-6-small" data-id="81:498"><div class="x30-off-xDYx5D valign-text-middle inter-semi-bold-white-11px" data-id="81:499">30% OFF</div></div><div class="symbol-rQk8bn valign-text-middle symbol fontawesome5pro-solid-normal-mountain-mist-14px" data-id="76:190"></div><img class="group-1-6-stroke-cusbr8" data-id="81:560" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/group---1---6--stroke-.svg" alt="Group - 1 / 6 (Stroke)"><div class="group-2-6-cusbr8" data-id="76:197"><p class="link-genber-lil-crunchies-ounce-Bjl3Uc valign-text-middle inter-semi-bold-black-14px" data-id="76:198">Jordan 1 high chicago,<br> Basketball shoes</p><div class="symbol-Bjl3Uc valign-text-middle symbol fontawesome5pro-solid-normal-my-sin-11px" data-id="76:199"></div><div class="symbol-Br2543 valign-text-middle symbol fontawesome5pro-solid-normal-my-sin-11px" data-id="76:200"></div><div class="symbol-GUUC0y valign-text-middle symbol fontawesome5pro-solid-normal-my-sin-11px" data-id="76:201"></div><div class="symbol-bC9Ubq valign-text-middle symbol fontawesome5pro-solid-normal-my-sin-11px" data-id="76:202"></div><div class="symbol-KxGqfB valign-text-middle symbol" data-id="76:203"></div><div class="small-7-Bjl3Uc valign-text-middle" data-id="76:204">(7)</div></div><div class="symbol-RppJxX valign-text-middle symbol" data-id="76:207"></div><img class="group-2-6-stroke-cusbr8" data-id="81:561" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e800719e1d4fa424efba/img/group---2---6--stroke-.svg" alt="Group - 2 / 6 (Stroke)"><p class="group-3-6-link-gancho-slim-snacker-high-cusbr8 valign-text-middle inter-semi-bold-black-14px" data-id="76:211">Nike Kyrie Irving 2, <br>Basketball shoes</p><div class="symbol-wEc1fp valign-text-middle symbol" data-id="76:217"></div><img class="group-3-6-stroke-cusbr8" data-id="81:562" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/group---3---6--stroke-.svg" alt="Group - 3 / 6 (Stroke)"><p class="group-4-6-link-emno-breeze-baby-carrier-cusbr8 valign-text-middle inter-semi-bold-black-14px" data-id="76:223">Jordan 4 white cement,<br>Basketball shoes</p><div class="symbol-ENV5Ug valign-text-middle symbol fontawesome5pro-solid-normal-mountain-mist-14px" data-id="76:229"></div><img class="group-4-6-stroke-cusbr8" data-id="81:563" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/group---4---6--stroke-.svg" alt="Group - 4 / 6 (Stroke)"><p class="group-5-6-link-shorp-49-class-fhd-1080-cusbr8 valign-text-middle inter-semi-bold-black-14px" data-id="76:237">NBA Cleveland Cavaliers,<br>NBA basketball jersey</p><p class="group-5-6-link-shorp-49-class-fhd-1081-cusbr8 valign-text-middle inter-semi-bold-black-14px" data-id="76:452">Shorp 49” Class FHD 1080</p><div class="symbol-0dWnEx valign-text-middle symbol fontawesome5pro-solid-normal-mountain-mist-14px" data-id="76:240"></div><div class="symbol-TdlIxk valign-text-middle symbol fontawesome5pro-solid-normal-mountain-mist-14px" data-id="106:23"></div><img class="group-5-6-stroke-cusbr8" data-id="81:564" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/group---5---6--stroke-.svg" alt="Group - 5 / 6 (Stroke)"><img class="group-5-8-stroke-cusbr8" data-id="81:565" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/group---5---8--stroke-.svg" alt="Group - 5 / 8 (Stroke)"><img class="pngwingcom-6-1-cusbr8" data-id="65:81" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6d48592ff18ccb38bb1e4/img/pngwing-com--6--1.png" alt="pngwing.com (6) 1"><img class="pngwingcom-4-1-cusbr8" data-id="65:91" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e04a002c92c9414ebcd3/img/pngwing-com--4--1-1@2x.png" alt="pngwing.com (4) 1"><img class="pngwingcom-5-1-cusbr8" data-id="76:477" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67cd4b6670213266b1bcf2e9/img/pngwing-com--5--1.png" alt="pngwing.com (5) 1"><img class="pngwingcom-8-1-cusbr8" data-id="81:488" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6d48592ff18ccb38bb1e4/img/pngwing-com--8--1.png" alt="pngwing.com (8) 1"><div class="rectangle-10-cusbr8" data-id="81:500"></div><img class="logo-beater-01-3-cusbr8" data-id="81:529" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/logo-beater-01-3@2x.png" alt="logo beater-01 3"><img class="group-6-cusbr8" data-id="92:4" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e800719e1d4fa424efba/img/group-6@2x.png" alt="Group 6"><img class="group-7-cusbr8" data-id="92:5" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e04a002c92c9414ebcd3/img/group-7-1@2x.png" alt="Group 7"><div class="connect-with-us-cusbr8 poppins-semi-bold-white-20px" data-id="81:507">Connect with us</div><div class="help-yo9xbe help poppins-semi-bold-white-20px" data-id="92:6">Help</div><div class="hub-admin-cusbr8 poppins-semi-bold-white-20px" data-id="92:14">Hub Admin</div><div class="x62-821-365-7432-cusbr8 poppins-semi-bold-white-20px" data-id="92:15">(+62)-821-365-7432</div><div class="instagram-cusbr8 poppins-normal-white-20px" data-id="81:508">Instagram</div><div class="blog-news-cusbr8 poppins-normal-white-20px" data-id="92:7">Blog &amp; News</div><div class="tik-tok-cusbr8 poppins-normal-white-20px" data-id="81:509">Tik tok</div><div class="how-to-buy-cusbr8 poppins-normal-white-20px" data-id="92:8">How to Buy</div><div class="testimonial-cusbr8 poppins-normal-white-20px" data-id="92:9">Testimonial</div><div class="check-order-cusbr8 poppins-normal-white-20px" data-id="92:10">Check order</div><div class="track-order-cusbr8 poppins-normal-white-20px" data-id="92:11">Track order</div><div class="term-and-conditions-cusbr8 poppins-normal-white-20px" data-id="92:12">Term and conditions</div><div class="payment-confirmation-cusbr8 poppins-normal-white-20px" data-id="92:13">Payment confirmation</div><div class="rectangle-11-cusbr8" data-id="81:558"></div><div class="for-more-product-cusbr8" data-id="81:566">For more product</div><div class="rectangle-12-cusbr8" data-id="92:27"></div><div class="group-8-cusbr8" data-id="92:26"><div class="beat-your-enemy-IVz8fj beat-your-enemy poppins-normal-white-24px" data-id="92:17">BEAT YOUR ENEMY</div><div class="basketball-tutorial-IVz8fj poppins-normal-white-24px" data-id="92:25">BASKETBALL TUTORIAL</div><div class="original-basketball-shoes-IVz8fj poppins-normal-white-24px" data-id="92:24">ORIGINAL BASKETBALL SHOES</div><img class="line-4-IVz8fj" data-id="92:19" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6d48592ff18ccb38bb1e4/img/line-2.svg" alt="Line 4"><img class="line-5-IVz8fj" data-id="92:21" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6d48592ff18ccb38bb1e4/img/line-2.svg" alt="Line 5"></div><div class="group-1-6-yo9xbe group-1-6" data-id="76:191"><div class="group-3-3-prod1_3jpg-H1OnTh" data-id="76:192-a0901f7d-5d5c-4169-a951-f9fa726b2b4e"><img class="image-2-V70l4c" data-id="76:465" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/67cd2afbd88328bf7919b116/releases/67d6e64f719e1d4fa424efb2/img/image-2@2x.png" alt="image 2"></div></div></div></div><script src="launchpad-js/launchpad-banner.js" async></script><script defer src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js"></script></body></html>
